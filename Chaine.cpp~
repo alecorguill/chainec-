@@ -1,0 +1,7 @@
+#include <string.h>
+#include "Chaine.hpp"
+
+Chaine::Chaine(char * c) {
+
+
+}

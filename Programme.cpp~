@@ -1,0 +1,6 @@
+#include "Chaine.hpp"
+
+int main() {
+  Chaine c;
+  Chaine * p;
+}
