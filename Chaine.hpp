@@ -3,14 +3,18 @@
 
 class Chaine {
   //Attributs
+private:
   unsigned int _taille;
   char * _donnees;
 
+  //Operateurs
+public:
+  const Chaine& operator=(const Chaine &);
   //Constructeurs 
 public:
   Chaine();
   Chaine(const char *);
-  
+  Chaine(const Chaine &c);
   //Methodes
 public:
   unsigned int taille() const;

@@ -7,13 +7,15 @@ void annexe(const Chaine &c){
   printf("%s est allée dans annexe taille = %d\n", c.donnees(),c.taille());
 }
 
+Chaine print (Chaine &s){
+  s.debug();
+  return s ;
+}
 
-int main(int argc, char ** argv) {
-  Chaine s1("Une chaine");
-  Chaine s2(s1);
-  Chaine s3 = s1;
 
-  s1.debug();
+int main (){
+  Chaine s1("une chaine"); // 1
+  Chaine s2("Coucou"); // 2
+  s2 = s1 ; // 3
   s2.debug();
-  s3.debug();
 }
