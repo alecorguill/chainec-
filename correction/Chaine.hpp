@@ -20,7 +20,8 @@ public:
 public:
   unsigned int taille() const;
   char operator[](int indice) const;
-  operator char const *(void) const;
+  operator char * const() const;
+
 };
 
 #endif

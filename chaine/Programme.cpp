@@ -2,7 +2,7 @@
 #include <iostream>
 #include "Chaine.hpp"
 
-void annexe(const Chaine &c){
+void annexe(const Chaine c){
   //c.set(2); Erreur, une reference ne peut appeler uniquement des methodesconst
   printf("%s est allée dans annexe taille = %d\n", c.donnees(),c.taille());
 }
@@ -13,9 +13,10 @@ Chaine print (Chaine &s){
 }
 
 
-int main (){
-  Chaine s1("une chaine"); // 1
-  Chaine s2("Coucou"); // 2
-  s2 = s1 ; // 3
-  s2.debug();
+int  main (){
+  Chaine s1("Hello ");
+  Chaine s2("World");
+  const Chaine &s3 = s1+s2;
+  printf("%s\n", s3.donnees());
+  delete s3;
 }

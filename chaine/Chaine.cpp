@@ -45,12 +45,37 @@ void Chaine::debug() const{
   std::cout<<this->_taille<<std::endl;
 }
 
-const Chaine& operator=(const Chaine& c) {
+const Chaine& Chaine::operator=(const Chaine& c) {
   if(this == &c)
     return *this;
   delete [] _donnees;
-  this->_taille = c._taille();
+  this->_taille = c.taille();
   this->_donnees = new char[_taille+1];
   const char * tmp = c.donnees();
   strcpy(this->_donnees, tmp);
+  return *this;
+}
+
+char Chaine::operator[](unsigned int indice) const{
+  if(indice < 0 || indice > _taille)
+    exit(EXIT_FAILURE);
+  return *(_donnees+indice);
+}
+
+Chaine::operator char * const() const{
+  return _donnees;
+}
+
+Chaine::operator int const() const{
+  return 2;
+}
+
+const Chaine& Chaine::operator+(const Chaine& c1) const{
+  char * tmp = new char[c1.taille()+_taille];
+  strcpy(tmp,this->_donnees);
+  strcat(tmp,c1.donnees());
+  Chaine* res = new Chaine(tmp);
+  //Chaine &res2 = *res;
+  delete tmp;
+  return *res;
 }
