@@ -1,0 +1,20 @@
+#ifndef ENSEIGNANT_HPP
+#define ENSEIGNANT_HPP
+
+
+#include <string>
+
+
+namespace enseirb {
+  using namespace std;
+  class Enseignant {
+  private:
+    unsigned int _services;
+    
+  public:
+    Enseignant(const string &s);
+    unsigned int nbHeure() const;
+    string nom() const;
+    ~Enseignant();
+  };
+}
