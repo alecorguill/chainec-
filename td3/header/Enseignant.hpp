@@ -5,7 +5,7 @@
 #include <string>
 
 namespace enseirb {
-  class Enseignant : public Personne {
+  class Enseignant : virtual Personne {
   private:
     unsigned int _services;
     
@@ -13,7 +13,7 @@ namespace enseirb {
     Enseignant(const std::string &s);
     unsigned int nbHeure() const;
     std::string nom() const;
-    ~Enseignant();
+    virtual ~Enseignant();
   };
 }
 

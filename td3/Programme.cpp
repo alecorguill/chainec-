@@ -1,7 +1,7 @@
 #include "./header/Etudiant.hpp"
 #include "./header/Personne.hpp"
 #include "./header/Enseignant.hpp"
-
+#include "./header/EleveVacataire.hpp"
 #include <string>
 #include <iostream>
 
@@ -12,8 +12,8 @@ void afficheNom(Personne &p){
 
 int main() {
   const std::string s = "didier";
-  Enseignant e(s);
-  Personne &p = e;
-  afficheNom(p);
+  EleveVacataire e(s);
+  std::cout << e.nom() << std::endl;
+  afficheNom(e);
   return 1;
 }

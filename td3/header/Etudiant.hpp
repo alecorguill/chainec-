@@ -5,7 +5,7 @@
 #include <string>
 
 namespace enseirb {
-  class Etudiant : public Personne {
+  class Etudiant : virtual Personne {
   public:
     Etudiant(const std::string & s);
   private:
@@ -17,7 +17,7 @@ namespace enseirb {
     std::string nom() const;
     void setEnseignement(const std::string & s);
     
-    ~Etudiant();
+    virtual ~Etudiant();
   };
   
 }
